@@ -10,7 +10,7 @@
 <body>
 Registration <br>
 
-<form action="/servlet" method="get">
+<form action="/Servlet" method="get">
     Input: <input type="text" name="userName"/>
     <button type="submit" name="send" value="next">Reg</button>
 </form>

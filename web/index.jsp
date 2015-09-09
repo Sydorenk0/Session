@@ -8,10 +8,18 @@
   </head>
   <body>
 Выбрать страницу<br>
-  //<table>
-   // <th><a href =${pageContext.servletContext.contextPath}"page1.jsp">Page1"CAT"</a></th>
-   // <th><a href =${pageContext.servletContext.contextPath}"page2.jsp">Page2"DOG"</a></th>
- // </table>
-           <c:redirect url="registration.jsp"/>
+  <table>
+    <tr>
+      <th><a href =${pageContext.servletContext.contextPath}"page1.jsp">Page1"CAT"</a></th>
+    </tr>
+      <tr>
+    <th><a href =${pageContext.servletContext.contextPath}"page2.jsp">Page2"DOG"</a></th>
+      </tr>
+      <tr>
+          <th><a href =${pageContext.servletContext.contextPath}"registration.jsp">reg</a></th>
+      </tr>
+
+  </table>
+          c:redirect url="registration.jsp"/>
   </body>
 </html>
