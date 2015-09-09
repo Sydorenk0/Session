@@ -10,7 +10,7 @@
 Выбрать страницу<br>
   <table>
     <tr>
-      <th><a href =${pageContext.servletContext.contextPath}"page1.jsp">Page1"CAT"</a></th>
+      <th><a href =${pageContext.servletContext.contextPath}"page1.jsp?url=/page1.jsp">Page1"CAT"</a></th>
     </tr>
       <tr>
     <th><a href =${pageContext.servletContext.contextPath}"page2.jsp">Page2"DOG"</a></th>

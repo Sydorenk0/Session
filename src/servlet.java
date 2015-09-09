@@ -14,12 +14,29 @@ public class Servlet extends HttpServlet{
     public void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
        HttpSession session =  request.getSession();
 
+        String value = (String) session.getAttribute("userName");
+        String url = request.getParameter("url");
+        System.out.println(value + " " + url);
 
-        String str = request.getParameter("userName");
-        session.setAttribute("userName", str);
+        if (value != null){
+            System.out.println("value" +value);
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/page1.jsp");
+            dispatcher.forward(request,response);
+        } else {
+            String str = request.getParameter("userName");
+            if (str!= null ) {
+                System.out.println("str = " + str);
+                session.setAttribute("userName", str);
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/showsession.jsp");
+                dispatcher.forward(request, response);
+            } else{
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/registration.jsp");
+                dispatcher.forward(request, response);
+            }
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/showsession.jsp");
-        dispatcher.forward(request, response);
+        }
+
+
     }
 
 }

@@ -13,19 +13,23 @@ public class LogFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+    public void doFilter(ServletRequest request, ServletResponse response,  FilterChain chain) throws IOException, ServletException {
         System.out.println("doFilter is execute");
-        //HttpSession session =  request.getSession();
+        //HttpSession se = request.getSession();
 
-        //String string = request.getParameter("userName");
-        // String url = request.getParameter("url");
+        //String string = (String) session.getAttribute("userName");
+        String string = request.getParameter("userName");
+        String url = request.getParameter("url");
+        //se.setAttribute("url", url);
+        System.out.println(string +" " + url);
         //if (string != null) {
-        //   HttpServletResponse httpResponse = (HttpServletResponse) response;
-        //  httpResponse.sendRedirect(url);
+         //   HttpServletResponse httpResponse = (HttpServletResponse) response;
+           // httpResponse.sendRedirect(url);
         //} else {
-        HttpServletResponse httpResponse = (HttpServletResponse) response;
-        httpResponse.sendRedirect("registration.jsp");
-    }
+            HttpServletResponse httpResponse = (HttpServletResponse) response;
+            httpResponse.sendRedirect("/Servlet");
+        }
+
 
     @Override
     public void destroy() {
