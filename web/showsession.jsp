@@ -14,6 +14,7 @@
     <title></title>
 </head>
 <body>
-Session: <font color="green"><%= value %></font>
+Session: <font color="green"><%= value %></font><br>
+<a href =${pageContext.servletContext.contextPath}"index.jsp">index</a>
 </body>
 </html>

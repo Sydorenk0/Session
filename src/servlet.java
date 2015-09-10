@@ -9,34 +9,22 @@ import java.io.IOException;
 /**
  * Created by Alex on 09.09.2015.
  */
-public class Servlet extends HttpServlet{
+public class Servlet extends HttpServlet {
 
-    public void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-       HttpSession session =  request.getSession();
-
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
         String value = (String) session.getAttribute("userName");
-        String url = request.getParameter("url");
-        System.out.println(value + " " + url);
+        String url = (String) session.getAttribute("url");
+        System.out.println(value + " " +url);
 
-        if (value != null){
-            System.out.println("value" +value);
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/page1.jsp");
-            dispatcher.forward(request,response);
-        } else {
+        if (value == null) {
             String str = request.getParameter("userName");
-            if (str!= null ) {
+            if (str != null) {
                 System.out.println("str = " + str);
                 session.setAttribute("userName", str);
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/showsession.jsp");
-                dispatcher.forward(request, response);
-            } else{
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/registration.jsp");
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
                 dispatcher.forward(request, response);
             }
-
         }
-
-
     }
-
 }
