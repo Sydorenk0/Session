@@ -14,6 +14,7 @@
     <title></title>
 </head>
 <body>
-PAGE 1 <font color="green"><%= val %></font>
+PAGE 1 <font color="green"><%= val %></font> <br>
+<a href =${pageContext.servletContext.contextPath}"index.jsp">index</a>
 </body>
 </html>
