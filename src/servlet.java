@@ -15,7 +15,7 @@ public class Servlet extends HttpServlet {
         HttpSession session = request.getSession();
         String value = (String) session.getAttribute("userName");
         String url = (String) session.getAttribute("url");
-        System.out.println(value + " " +url);
+        System.out.println(value + " " + url);
 
         if (value == null) {
             String str = request.getParameter("userName");
@@ -25,6 +25,10 @@ public class Servlet extends HttpServlet {
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
                 dispatcher.forward(request, response);
             }
+        }
+        if (value != null) {
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/showsession.jsp");
+            dispatcher.forward(request, response);
         }
     }
 }
