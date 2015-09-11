@@ -11,7 +11,7 @@
 Registration <br>
 
 <form action="/Servlet" method="get">
-    Input: <input type="text" name="userName"/>
+    Input: <input type="text" name="userName" value="${userName}"/>
     <button type="submit" name="send" value="next">Reg</button>
 </form>
 </body>

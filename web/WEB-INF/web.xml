@@ -17,11 +17,15 @@
     <filter>
         <filter-name>logFilterName</filter-name>
         <filter-class>LogFilter</filter-class>
+        <init-param>
+            <param-name>avoid-urls</param-name>
+            <param-value>/index.jsp,/registration.jsp</param-value>
+        </init-param>
     </filter>
 
     <filter-mapping>
         <filter-name>logFilterName</filter-name>
-        <url-pattern>/page1.jsp</url-pattern>
+        <url-pattern>*.jsp</url-pattern>
     </filter-mapping>
 
 </web-app>
